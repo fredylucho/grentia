@@ -1,0 +1,401 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    --var-color: 270;
+
+    /* HSL color mode */
+    --color-first: hsl(var(--var-color), 69%, 61%);
+    --color-second: hsl(var(--var-color), 60%, 52%);
+    --color-default: white;
+    --color-title: hsl(var(--var-color), 8%, 15%);
+    --color-text: hsl(var(--var-color), 8%, 45%);
+    --color-text-light: hsl(var(--var-color), 8%, 65%);
+    --color-input: hsl(var(--var-color), 70%, 96%);
+    --scroll-bar-color: hsl(var(--var-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--var-color), 12%, 80%);
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --font-size-big: 2rem;
+    --font-size-h1: 1.5rem;
+    --font-size-h2: 1.25rem;
+    --font-size-h3: 1.125rem;
+    --font-size-normal: .938rem;
+    --font-size-small: .813rem;
+    --font-size-smaller: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    /*========== Margenes Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mg-0-25: .25rem;
+    --mg-0-5: .5rem;
+    --mg-0-75: .75rem;
+    --mg-1: 1rem;
+    --mg-1-5: 1.5rem;
+    --mg-2: 2rem;
+    --mg-2-5: 2.5rem;
+    --mg-3: 3rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --font-size-big: 3rem;
+        --font-size-h1: 2.25rem;
+        --font-size-h2: 1.5rem;
+        --font-size-h3: 1.25rem;
+        --font-size-normal: 1rem;
+        --font-size-small: .875rem;
+        --font-size-smaller: .813rem;
+    }
+    
+}
+
+/*==================== BASE ====================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-title);
+  font-weight: var(--font-weight-semibold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*==================== REUSABLE CSS CLASSES ====================*/
+section {
+  padding: 2rem 0;
+}
+
+.c-section-title {
+  font-size: var(--font-size-h1);
+  padding: var(--mg-1) 0;
+  color: var(--color-title);
+} 
+
+.c-section-subtitle {
+  display: block;
+  font-size: var(--font-size-normal);
+  padding: var(--mg-1) 0;
+}
+
+.c-section-title, 
+.c-section-subtitle {
+  text-align: center;
+}
+
+.c-section-p{
+  text-align: justify;
+  font-size: var(--font-size-normal);
+  padding: var(--mg-1-5) 0;
+  color: var(--color-text);
+}
+
+/*==================== LAYOUT ====================*/
+.container {
+  /* max-width: 768px; */
+  margin-left: var(--mg-1-5);
+  margin-right: var(--mg-1-5);
+}
+
+.c-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+main{
+    overflow: hidden;
+}
+
+/*==================== NAV ====================*/
+header {
+  height: var(--header-height);
+}
+
+.c-nav{
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  z-index: var(--z-fixed);
+  display: flex;
+  padding: 0 var(--mg-1-5);
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.c-img-logo {
+    width: 100px;
+}
+
+.c-nav-menu{
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    padding: var(--mg-1) 0;
+    text-align: center;
+    transition: 0.8s;
+    border-radius: 8px;
+    z-index: var(--z-fixed);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-default)
+}
+
+.c-nav-item{
+    padding: var(--mg-0-5) 0;
+}
+
+.c-nav-link{
+    color: var(--color-text);
+    font-size: var(--font-size-normal);
+    font-weight: var(--font-weight-medium);
+    transition: 0.8s;
+}
+
+.c-nav-link:hover, .c-toggle i:hover{
+    color: var(--color-first);
+}
+
+.c-active-link{
+    position: relative;
+}
+  
+.c-active-link::before{
+    content: '';
+    position: absolute;
+    bottom: -.75rem;
+    left: 45%;
+    width: 5px;
+    height: 5px;
+    background-color: var(--color-first);
+    border-radius: 50%;
+}
+
+.c-toggle i{
+    cursor: pointer;
+    font-size: var(--font-size-normal);
+    color: black;
+}
+
+.c-show-menu{
+    top: 60px;
+}
+
+/* show menu */
+
+
+/* Active link */
+
+
+/* Change background header */
+
+
+/*==================== HOME ====================*/
+.c-img{
+  width: 100%;
+  justify-self: center;
+}
+
+.c-section-title-big{
+  font-size: var(--font-size-big);
+  text-align: center;
+  padding: var(--mg-1) 0;
+  color: var(--color-title);
+}
+
+.c-section-botton{
+    display: inline-block;
+    padding: var(--mg-0-75);
+    border-radius: 10px;
+    color: white;
+    font-weight: var(--font-weight-medium);
+    background-color: var(--color-first);
+}
+
+/*==================== ABOUT ====================*/
+.c-about-img{
+  clip-path: circle(50% at 50% 50%);
+}
+
+/*==================== SERVICES ====================*/
+.c-section-card{
+    text-align: center;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 0 3px;
+    box-shadow: 0 2px 6px rgba(65,11,16,0.15);
+}
+
+.c-section-icon{
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  padding: var(--mg-1);
+  border-radius: 50%;
+  display: inline;
+  color: white;
+  background-color: var(--color-first);
+}
+
+.c-container-section{
+  padding: 12px 0;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+}
+
+/*==================== PORTFOLIO ====================*/
+.c-section-portafolio{
+  overflow: initial;
+}
+
+.c-container-portafolio{
+  /* padding: 0 rem; */
+}
+
+.c-img-portafolio{
+  border-radius: 10px;
+  margin: var(--mg-1) 0;
+  width: 240px;
+  /* height: 150px; */
+  justify-self: center;
+}
+
+.c-portafolio-subtitle{
+  font-size: var(--font-size-h3);
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+  margin: 0 0 var(--mg-1);
+}
+
+.c-portafolio-p{
+  font-size: var(--font-size-normal);
+  color: var(--color-text);
+  text-align: justify;
+  margin-bottom: 30px;
+  /* margin: 30px; */
+}
+
+.swiper-button-prev::after, 
+.swiper-button-next::after{
+  content: '';
+}
+
+.swiper-portafolio-icon{
+  font-size: 1.5rem;
+  color: var(--color-first);
+}
+
+.swiper-button-prev{
+  left: -0.1rem;
+}
+
+.swiper-button-next{
+  right: -0.1rem;
+}
+
+.swiper-container-horizontal > .swiper-pagination-bullets{
+  bottom: -.1rem;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: var(--color-first);
+}
+/*==================== PROJECT IN MIND ====================*/
+
+
+/*==================== TESTIMONIAL ====================*/
+
+
+/*==================== CONTACT ME ====================*/
+
+
+/*==================== FOOTER ====================*/
+
+
+
+/*========== SCROLL BAR ==========*/
+.c-scroll-nav{
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.c-scrolltop{
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 5px;
+  z-index: 1;
+  transition: 0.8s;
+  background-color: var(--color-first);
+  opacity: 0.5;
+  visibility: hidden;
+}
+
+.c-scrolltop:hover{
+  background-color: var(--color-second);
+  opacity: 1;
+}
+
+.c-scrolltop-icon{
+  color: white;
+}
+
+/* Show scroll */
+.c-show-scroll{
+  visibility: visible;
+}
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+
+
+/* For medium devices */
+@media screen and (min-width: 800px){
+  .c-container-portafolio,
+  .c-section-home{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .c-img-portafolio{
+    width: 340px;
+
+  }
+}
+
+/* For large devices */
