@@ -14,21 +14,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
 </head>
 <body>
+
     <header>
         <nav class="c-nav" id="i-nav">
-            
             <img class="c-img-logo" src="img/logo.png" alt="">
-
             <div class="c-nav-menu" id="i-nav-menu">
                 <ul class="c-nav-list">
                     <li class="c-nav-item"><a href="#i-home" class="c-nav-link c-active-link">Inicio</a></li>
                     <li class="c-nav-item"><a href="#i-about" class="c-nav-link">Acerca de mi</a></li>
                     <li class="c-nav-item"><a href="#i-services" class="c-nav-link">Servicios</a></li>
                     <li class="c-nav-item"><a href="#i-portafolio" class="c-nav-link">Portafolio</a></li>
-                    <li class="c-nav-item"><a href="#" class="c-nav-link">Trabajemos juntos</a></li>
+                    <li class="c-nav-item"><a href="#i-contact" class="c-nav-link">Trabajemos juntos</a></li>
                 </ul>
             </div>
-
             <div class="c-toggle" id="i-toggle">
                 <i class="fa-solid fa-bars"></i>
             </div>
@@ -52,7 +50,7 @@
         <!-- SECTION ABOUT -->
         <section id="i-about">
             <div class="c-grid">
-                <div>
+                <div class="c-section-about">
                     <h1 class="c-section-title">Acerca de mi</h1>
                     <p class="c-section-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit quam eaque, dolor veniam ratione eveniet. Veritatis, distinctio assumenda voluptas suscipit, corporis obcaecati, nam eius pariatur beatae voluptatibus perspiciatis nobis consectetur!</p>
                 </div>
@@ -140,9 +138,45 @@
             </div>
         </section>
 
-        <!-- <section id="i-about">
-            
-        </section> -->
+        <!-- SECTION ABOUT -->
+        <section id="i-contact">
+            <h1 class="c-section-title">Trabajemos juntos</h1>
+            <form action="" class="c-form-contact c-grid">
+                <div class="c-input-contact">
+                    <div class="c-content-contact">
+                        <label for="" class="c-label-contact">Nombre</label>
+                        <input type="text" class="c-input">
+                    </div>
+                    <div class="separation"></div>
+                    <div class="c-content-contact">
+                        <label for="" class="c-label-contact">Correo</label>
+                        <input type="email" class="c-input">
+                    </div>
+                </div>
+
+                <div class="c-content-contact">
+                    <label for="" class="c-label-contact">Proyecto</label>
+                    <input type="text" class="c-input">
+                </div>
+
+                <div class="c-content-contact">
+                    <label for="" class="c-label-contact">Mensaje</label>
+                    <textarea name="" id="" cols="0" rows="7" class="c-input"></textarea>
+                </div>
+
+                <div>
+                    <a class="c-section-botton" href="#">Enviar mensaje</a>
+                </div>
+            </form>
+        </section>
+
+
+        <div class="c-section-social">
+            <a class="c-social-icon" href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a class="c-social-icon" href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a class="c-social-icon" href="https://wa.me/528120061685"><i class="fa-brands fa-whatsapp"></i></a>
+            <a class="c-social-icon" href="mailto:gisela.rodriguezga@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
 
         <!-- SCROLLTOP -->
         <a href="#" class="c-scrolltop" id="i-scrolltop"><i class="fa-solid fa-arrow-up c-scrolltop-icon"></i></a>

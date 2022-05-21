@@ -16,8 +16,6 @@
     --color-text: hsl(var(--var-color), 8%, 45%);
     --color-text-light: hsl(var(--var-color), 8%, 65%);
     --color-input: hsl(var(--var-color), 70%, 96%);
-    --scroll-bar-color: hsl(var(--var-color), 12%, 90%);
-    --scroll-thumb-color: hsl(var(--var-color), 12%, 80%);
 
     /*========== Font and typography ==========*/
     --body-font: 'Poppins', sans-serif;
@@ -122,6 +120,10 @@ section {
   color: var(--color-text);
 }
 
+form{
+  padding: 1.5rem 0 0;
+}
+
 /*==================== LAYOUT ====================*/
 .container {
   /* max-width: 768px; */
@@ -131,7 +133,7 @@ section {
 
 .c-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 main{
@@ -281,9 +283,9 @@ header {
   overflow: initial;
 }
 
-.c-container-portafolio{
-  /* padding: 0 rem; */
-}
+/* .c-container-portafolio{
+   padding: 0 rem; 
+} */
 
 .c-img-portafolio{
   border-radius: 10px;
@@ -333,17 +335,45 @@ header {
 .swiper-pagination-bullet-active{
   background-color: var(--color-first);
 }
-/*==================== PROJECT IN MIND ====================*/
-
-
-/*==================== TESTIMONIAL ====================*/
-
 
 /*==================== CONTACT ME ====================*/
 
+.c-content-contact{
+  background-color: var(--color-input);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem 0.25rem;
+}
 
-/*==================== FOOTER ====================*/
+.c-label-contact{
+  color: var(--color-title);
+  font-size: var(--font-size-small);
+}
+.separation{
+  margin: 1rem 0;
+}
+.c-input{
+  width: 100%;
+  background-color: var(--color-input);
+  color: var(--color-text);
+  font-size: var(--font-size-normal);
+  border: none;
+  outline: none;
+  padding: 0.25rem 0.5rem 0.5rem 0;
+}  
+/*==================== SOCIAL MEDIA ====================*/
+.c-section-social{
+  display: flex;
+  width: 100%;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-default);
+}
 
+.c-social-icon{
+  color: var(--color-first);
+  padding: 0 1.5rem;
+}
 
 
 /*========== SCROLL BAR ==========*/
@@ -354,7 +384,7 @@ header {
 .c-scrolltop{
   position: fixed;
   right: 10px;
-  bottom: 10px;
+  bottom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -365,11 +395,6 @@ header {
   background-color: var(--color-first);
   opacity: 0.5;
   visibility: hidden;
-}
-
-.c-scrolltop:hover{
-  background-color: var(--color-second);
-  opacity: 1;
 }
 
 .c-scrolltop-icon{
