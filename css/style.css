@@ -233,6 +233,15 @@ header {
 
 
 /*==================== HOME ====================*/
+.c-section-home-background{
+  fill: var(--color-first);
+  justify-self: center;
+  
+}
+
+.home__img{
+  width: 100%;
+}
 .c-section-home{
   gap: 1rem;
 }
@@ -243,8 +252,14 @@ header {
 }
 
 .c-content-social{
-  display: grid;
+  /* display: grid; */
+  display: none;
   grid-template-columns: max-content;
+
+}
+
+.c-content-social-vmobile{
+  display: flex;
 }
 
 .c-social-icon{
@@ -252,17 +267,25 @@ header {
   margin: 0.5rem 0;
 }
 
-.c-img-home{
+.c-section-subtitle-home{
+  text-align: center;
+  color: var(--color-text);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* .c-img-home{
   width: 190px;
 }
 
 .c-img-brand{
   width: 100%;
-}
+} */
 
 .c-section-description{
   left: 0;
   right: 0;
+  margin-right: 30px;
   grid-column: 1/3;
 }
 
@@ -465,12 +488,8 @@ header {
     grid-column: initial;
   }
 
-  .c-section-home{
-    /* height: 85vh; */
-  }
-
-  .c-img-home{
-    width: 350px;
+  .home__img{
+    width: 80%;
     order: 1;
     justify-self: center;
   }
@@ -486,7 +505,13 @@ header {
     order: -1;
   }
 
-
+  .c-content-social{
+     display: grid;   
+  }
+  
+  .c-content-social-vmobile{
+    display: none;
+  }
 
   /* .c-container-portafolio,
   .c-section-home{
