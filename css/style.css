@@ -252,8 +252,7 @@ header {
 }
 
 .c-content-social{
-  /* display: grid; */
-  display: none;
+   display: grid; 
   grid-template-columns: max-content;
 
 }
